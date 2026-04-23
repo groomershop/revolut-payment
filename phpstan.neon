@@ -1,0 +1,15 @@
+parameters:
+    level: 9
+
+    excludePaths:
+        - Test
+        - vendor
+    
+    ignoreErrors:
+        - "#Cannot cast mixed to string.#"
+        - "#^Call to an undefined method [a-zA-Z0-9\\_]#"
+        - "#Cannot call method [a-zA-Z0-9\\_\\\\:\\(\\)]+ on mixed.#"
+        - "#Class .* extends @final class .*#"
+        - "#Method [a-zA-Z0-9\\_\\\\:\\(\\)]+ has parameter \\$[a-zA-Z0-9_]+ with no value type specified in iterable type array#"
+        - "#Method [a-zA-Z0-9\\_\\\\:\\(\\)]+ return type has no value type specified in iterable type array#"
+        - "#Property [a-zA-Z0-9\\$\\_\\\\:\\(\\)]+ type has no value type specified in iterable type array#"
