@@ -9,10 +9,7 @@
     <event name="payment_method_assign_data_revolut_payment_request">
         <observer name="revolut_payment_request_gateway_data_assign" instance="Revolut\Payment\Observer\DataAssignObserver" />
     </event>
-    <event name="shortcut_buttons_container">
-        <observer name="revolut_payments_request_buttons" instance="Revolut\Payment\Observer\AppendPaymentRequestButtonObserver"/>
-    </event>
-    <event name="sales_order_shipment_track_save_after">
+<event name="sales_order_shipment_track_save_after">
         <observer name="revolut_payment_shipment_save_after" instance="Revolut\Payment\Observer\ShipmentSaveAfter"/>
     </event>
     <event name="sales_order_load_after">

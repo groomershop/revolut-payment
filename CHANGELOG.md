@@ -55,7 +55,6 @@
 ## 2.0.19
 
 - Improved Apple Pay domain registration process
-- Fixed Apple Pay Fast Checkout Address validation issue
 - Improve Magento order status sync with revolut payment status
 
 ## 2.0.18
@@ -111,7 +110,6 @@
 
 ## 2.0.5
 
-- Improved fast checkout address validation
 - Improved logging
 
 ## 2.0.4
@@ -126,17 +124,12 @@
 
 ## 2.0.2
 
-- Fixed Revolut Pay fast checkout mobile redirection
-
 ## 2.0.1
-
-- Fixed Revolut Pay fast checkout carrier issue
 
 ## 2.0.0
 
 - Added Revolut Pay redirection URLs
 - Added Apple Pay - Google Pay
-- Added Revolut Pay Fast Checkout
 - Fixed Orders processing with webhooks
 
 ## 1.0.0

@@ -10,11 +10,9 @@ interface OrderManagementInterface
      * Create Order
      *
      * @api
-     * @param bool $fastCheckout
-     * @param bool $revolutPayFastCheckout
      * @return \Revolut\Payment\Api\Data\OrderManagementResponseDataInterface
      */
-    public function create($fastCheckout = false, $revolutPayFastCheckout = false);
+    public function create();
 
     /**
      * Cancel Order

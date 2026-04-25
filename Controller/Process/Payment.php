@@ -15,7 +15,6 @@ use Revolut\Payment\Model\Helper\Logger;
 use Revolut\Payment\Model\RevolutOrder;
 use Revolut\Payment\Model\Ui\ConfigProvider;
 use Revolut\Payment\Model\Api\OrderManagement;
-use Revolut\Payment\Model\Api\FastCheckoutManagement;
 use Revolut\Payment\Model\RevolutPaymentInformationManagement;
 
 class Payment implements ActionInterface
@@ -55,12 +54,7 @@ class Payment implements ActionInterface
      */
     protected $revolutPaymentInformationManagement;
     
-    /**
-     * @var FastCheckoutManagement
-     */
-    protected $fastCheckoutManagement;
-    
-    /**
+/**
      * @var OrderManagement
      */
     protected $orderManagement;
@@ -80,7 +74,6 @@ class Payment implements ActionInterface
      * @param RedirectFactory $redirectFactory
      * @param StoreManagerInterface $storeManager
      * @param RevolutPaymentInformationManagement $revolutPaymentInformationManagement
-     * @param FastCheckoutManagement $fastCheckoutManagement
      * @param OrderManagement $orderManagement
      * @param QuotePaymentData $quotePaymentData
      */
@@ -92,7 +85,6 @@ class Payment implements ActionInterface
         RedirectFactory $redirectFactory,
         StoreManagerInterface $storeManager,
         RevolutPaymentInformationManagement $revolutPaymentInformationManagement,
-        FastCheckoutManagement $fastCheckoutManagement,
         OrderManagement $orderManagement,
         QuotePaymentData $quotePaymentData
     ) {
@@ -103,8 +95,7 @@ class Payment implements ActionInterface
         $this->redirectFactory = $redirectFactory;
         $this->storeManager = $storeManager;
         $this->revolutPaymentInformationManagement = $revolutPaymentInformationManagement;
-        $this->fastCheckoutManagement = $fastCheckoutManagement;
-        $this->orderManagement = $orderManagement;
+$this->orderManagement = $orderManagement;
         $this->quotePaymentData = $quotePaymentData;
     }
 
@@ -140,12 +131,7 @@ class Payment implements ActionInterface
                 'checkout?_rp_fr=' . $this->request->getParam('_rp_fr') . '#payment');
             }
 
-            if ($revolutOrder->getIsFastCheckout()) {
-                $this->logger->debug('run required checks for fast checkout: ' . $publicId);
-                $this->fastCheckoutManagement->validateOrder($revolutOrder->getPublicId());
-            }
-
-            $this->quotePaymentData->setAdditionalData(\json_encode([ // @phpstan-ignore-line
+$this->quotePaymentData->setAdditionalData(\json_encode([ // @phpstan-ignore-line
                 'publicId' => $revolutOrder->getPublicId(),
                 'setAgreement' => true
             ]));

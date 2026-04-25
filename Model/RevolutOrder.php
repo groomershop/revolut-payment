@@ -93,14 +93,13 @@ class RevolutOrder extends AbstractModel
      * @param int $quoteId
      * @param int $customerId
      * @param int $storeId
-     * @param bool $fastCheckout
      * @return RevolutOrder|null
      */
-    public function create($params, $quoteId, $customerId, $storeId, $fastCheckout)
+    public function create($params, $quoteId, $customerId, $storeId)
     {
         try {
             if (!empty($this->getRevolutOrderId())) {
-                return $this->update($params, $fastCheckout);
+                return $this->update($params);
             }
 
             $this->logger->debug('create new order: ' . $quoteId);
@@ -111,7 +110,6 @@ class RevolutOrder extends AbstractModel
             $this->setQuoteId($quoteId);
             $this->setCustomerId($customerId);
             $this->setStoreId($storeId);
-            $this->setIsFastCheckout((int)$fastCheckout);
             $this->setPublicId($revolutOrder['public_id']);
             $this->setCurrency($params['currency']);
             $this->setOrderAmount($params['amount']);
@@ -128,19 +126,18 @@ class RevolutOrder extends AbstractModel
      * Update order
      *
      * @param array $params
-     * @param bool $fastCheckout
      * @return RevolutOrder|null
      */
-    public function update($params, $fastCheckout)
+    public function update($params)
     {
         try {
             $this->logger->debug('update order params: ' . json_encode($params));
-            
+
             $this->logger->debug('update action: OrderId: ' .
             $this->getRevolutOrderId() . ' - StoreId: ' . $this->getStoreId());
-            
+
             $revolutOrder = $this->revolutOrderApi->retrieve($this->getRevolutOrderId(), $this->getStoreId());
-            
+
             if (empty($revolutOrder['state']) || $revolutOrder['state'] != 'PENDING') {
                 throw new LocalizedException(__('Can not update order, orderId: ' . $this->getRevolutOrderId()));
             }
@@ -153,13 +150,9 @@ class RevolutOrder extends AbstractModel
                 ' : ' . json_encode($revolutOrder)));
             }
 
-            if ($this->getOrderAmount() != $params['amount'] ||
-             $this->getCurrency() != $params['currency'] ||
-              (int)$this->getIsFastCheckout() != (int)$fastCheckout
-              ) {
+            if ($this->getOrderAmount() != $params['amount'] || $this->getCurrency() != $params['currency']) {
                 $this->setCurrency($params['currency']);
                 $this->setOrderAmount($params['amount']);
-                $this->setIsFastCheckout((int)$fastCheckout);
                 $this->save();
             }
 

@@ -242,14 +242,11 @@
     </type>
     
     <preference for="Revolut\Payment\Api\Data\OrderManagementResponseDataInterface" type="Revolut\Payment\Model\Data\OrderManagementResponseData" />
-    <preference for="Revolut\Payment\Api\Data\FastCheckoutParametersResponseDataInterface" type="Revolut\Payment\Model\Data\FastCheckoutParametersResponseData" />
-    <preference for="Revolut\Payment\Api\Data\ValidateOrderRequestDataInterface" type="Revolut\Payment\Model\Data\ValidateOrderRequestData" />
+<preference for="Revolut\Payment\Api\Data\ValidateOrderRequestDataInterface" type="Revolut\Payment\Model\Data\ValidateOrderRequestData" />
     <preference for="Revolut\Payment\Api\Data\ShippingOptionDataInterface" type="Revolut\Payment\Model\Data\ShippingOptionData" />
     <preference for="Revolut\Payment\Api\Data\TotalsDataInterface" type="Revolut\Payment\Model\Data\TotalsData" />
     <preference for="Revolut\Payment\Api\Data\AddressDataInterface" type="Revolut\Payment\Model\Data\AddressData" />
-    <preference for="Revolut\Payment\Api\Data\FastCheckoutResponseDataInterface" type="Revolut\Payment\Model\Data\FastCheckoutResponseData" />
-    <preference for="Revolut\Payment\Api\OrderManagementInterface" type="Revolut\Payment\Model\Api\OrderManagement" />
+<preference for="Revolut\Payment\Api\OrderManagementInterface" type="Revolut\Payment\Model\Api\OrderManagement" />
     <preference for="Revolut\Payment\Api\LogManagementInterface" type="Revolut\Payment\Model\Api\LogManagement" />
     <preference for="Magento\Quote\Model\ChangeQuoteControl" type="Revolut\Payment\Model\ChangeQuoteControl" />
-    <preference for="Revolut\Payment\Api\FastCheckoutManagementInterface" type="Revolut\Payment\Model\Api\FastCheckoutManagement" />
 </config>

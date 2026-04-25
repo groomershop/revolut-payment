@@ -28,11 +28,7 @@ define([], function () {
       return this.getConfig(window.checkoutConfig, key, defaultValue, false)
     },
 
-    getFastCheckoutConfig: function (key, defaultValue) {
-      return this.getConfig(window.fastCheckoutConfig, key, defaultValue, true)
-    },
-
-    getMinorAmount: function (amount, currency) {
+getMinorAmount: function (amount, currency) {
       const options = { style: 'currency', currency }
       const numberFormat = new Intl.NumberFormat('en-GB', options)
       const parts = numberFormat.formatToParts(amount)

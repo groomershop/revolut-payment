@@ -229,11 +229,9 @@ class OrderManagement implements OrderManagementInterface
      * Create order
      *
      * @api
-     * @param bool $fastCheckout
-     * @param bool $revolutPayFastCheckout
      * @return \Revolut\Payment\Api\Data\OrderManagementResponseDataInterface
      */
-    public function create($fastCheckout = false, $revolutPayFastCheckout = false)
+    public function create()
     {
         try {
             $quote = $this->getOrCreateQuote();
@@ -274,28 +272,17 @@ class OrderManagement implements OrderManagementInterface
                 ['amount' => $amount, 'currency'=> $currency],
                 $quoteId,
                 $customerId,
-                $storeId,
-                $fastCheckout
+                $storeId
             );
-            
+
             if (!$revolutOrder) {
                 $revolutOrderModel = $this->revolutOrderFactory->create();
                 $revolutOrder = $revolutOrderModel->create(
                     ['amount' => $amount, 'currency'=> $currency],
                     $quoteId, // @phpstan-ignore-line
                     $customerId, // @phpstan-ignore-line
-                    $storeId,
-                    $fastCheckout
+                    $storeId
                 );
-            }
-            
-            if ($revolutPayFastCheckout) {
-                $deliveryMethodAmount = isset($revolutOrder->revolutOrder['delivery_method']['amount']) ?
-                                    (int)$revolutOrder->revolutOrder['delivery_method']['amount'] : 0;
-
-                $subTotalAmount = $quote->getGrandTotal() - $quote->getShippingAddress()->getShippingAmount();
-                $subTotalAmount = $this->amountProvider->convert($subTotalAmount, $currency) + $deliveryMethodAmount;
-                $revolutOrder->update(['amount' => $subTotalAmount, 'currency' => $currency], $fastCheckout);
             }
 
             return $this->orderManagementResponse->create()
@@ -340,7 +327,7 @@ class OrderManagement implements OrderManagementInterface
         if ($event == ConstantValue::WEBHOOK_EVENT_ORDER_AUTHORISED
             && empty($this->revolutOrder->getIncrementOrderId())
             ) {
-            if ($this->revolutOrder->getIsFastCheckout() || !$this->revolutOrder->isRevolutPayPayment()) {
+            if (!$this->revolutOrder->isRevolutPayPayment()) {
                 return [];
             }
 
