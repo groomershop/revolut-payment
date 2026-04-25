@@ -9,7 +9,6 @@ define([
   'mage/storage',
   'Magento_Checkout/js/model/url-builder',
   window.checkoutConfig.payment.revolut.revolutSdk,
-  window.checkoutConfig.payment.revolut.revolutBannerSdk,
 ], function (
   $,
   Component,
@@ -18,7 +17,6 @@ define([
   storage,
   urlBuilder,
   RevolutCheckout,
-  RevolutUpsell,
 ) {
   'use strict'
   return Component.extend({
@@ -49,7 +47,7 @@ define([
       const currency = this.getCurrency()
       const totalAmount = this.getTotalAmount()
       const target = document.getElementById('revolut-pay-element')
-      
+
       if (!totalAmount || !currency || !target) return
 
       const paymentOptions = {
@@ -111,43 +109,6 @@ define([
 
     getCode: function () {
       return 'revolut_pay'
-    },
-    renderInformationalIcon: function () {
-      const target = document.getElementById('revolut-pay-informational-icon')
-      if (!target) return
-      const informationalBannersData = this.getPaymentConfig('informationalBannersData')
-      const locale = this.getPaymentConfig('locale')
-      const publicKey = this.getPaymentConfig('publicKey')
-
-      if (
-        !informationalBannersData ||
-        informationalBannersData.revolutPayTitleVariant === 'disabled'
-      )
-        return
-
-      if (!locale || !publicKey) return
-
-      const instanceUpsell = RevolutUpsell({
-        locale,
-        publicToken: publicKey,
-      })
-
-      instanceUpsell.promotionalBanner.mount(target, {
-        amount: this.getTotalAmount(),
-        variant:
-          informationalBannersData.revolutPayTitleVariant === 'cashback'
-            ? 'link'
-            : informationalBannersData.revolutPayTitleVariant,
-        currency: this.getCurrency(),
-        style: {
-          text:
-            informationalBannersData.revolutPayTitleVariant === 'cashback'
-              ? 'cashback'
-              : null,
-          color: 'blue',
-        },
-        __metadata: { channel: 'magento2' },
-      })
     },
   })
 })

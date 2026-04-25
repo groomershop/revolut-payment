@@ -19,12 +19,6 @@ class Config extends \Magento\Payment\Gateway\Config\Config
 
     public const WEBHOOK_SETUP = 'webhook_setup';
 
-    public const REVOLUT_INFORMATIONAL_BANNER =
-    'payment/revolut_payment/promotional_banners_settings/enable_informational_banner';
-    
-    public const REVOLUT_PAY_TITLE_ICON =
-    'payment/revolut_payment/promotional_banners_settings/revolut_pay_title_banner';
-    
     /**
      * @var Encryptor
      */
@@ -167,33 +161,4 @@ class Config extends \Magento\Payment\Gateway\Config\Config
          ];
     }
 
-    /**
-     * Get Revolut pay title icon active variant
-     *
-     * @param int $storeId
-     * @return mixed
-     */
-    public function revolutPayTitleVariant($storeId)
-    {
-        return $this->scopeConfig->getValue(
-            self::REVOLUT_PAY_TITLE_ICON,
-            ScopeInterface::SCOPE_STORE,
-            $storeId
-        );
-    }
-
-    /**
-     * Is revolut informational banner enabled
-     *
-     * @param int $storeId
-     * @return bool
-     */
-    public function isRevolutInformationalBannerEnabled($storeId)
-    {
-        return (bool) $this->scopeConfig->getValue(
-            self::REVOLUT_INFORMATIONAL_BANNER,
-            ScopeInterface::SCOPE_STORE,
-            $storeId
-        );
-    }
 }

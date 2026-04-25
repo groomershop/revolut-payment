@@ -24,7 +24,6 @@ interface FastCheckoutParametersResponseDataInterface
 
     public const KEY_PRODUCT_ID = 'product_id';
     
-    public const REVOLUT_INFORMATIONAL_BANNER_CONFIG = 'revolut_informational_banner_config';
 
     /**
      * Get IsRevolutPaymentRequestActiveLocation
@@ -146,18 +145,4 @@ interface FastCheckoutParametersResponseDataInterface
      */
     public function setProductId($productId);
     
-    /**
-     * Set RevolutInformationalBannerConfig
-     *
-     * @param mixed $bannerConfig
-     * @return $this
-     */
-    public function setRevolutInformationalBannerConfig($bannerConfig);
-
-    /**
-     * Get RevolutInformationalBannerConfig
-     *
-     * @return string
-     */
-    public function getRevolutInformationalBannerConfig();
 }

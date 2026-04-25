@@ -50,12 +50,6 @@ class ConstantValue
         'prod' => "https://merchant.revolut.com/embed.js",
         'dev' => "https://merchant.revolut.codes/embed.js"
     ];
-    
-    public const REVOLUT_BANNER_SDK_URLS = [
-        'sandbox' => "https://sandbox-merchant.revolut.com/upsell/embed.js",
-        'prod' => "https://merchant.revolut.com/upsell/embed.js",
-        'dev' => "https://merchant.revolut.codes/upsell/embed.js"
-    ];
 
     //error code
     public const FAILED_CARD = 2005;

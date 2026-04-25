@@ -184,25 +184,4 @@ class FastCheckoutParametersResponseData extends AbstractExtensibleObject implem
         return $this;
     }
 
-    /**
-     * Set RevolutInformationalBannerConfig
-     *
-     * @param string $bannerConfig
-     * @return $this
-     */
-    public function setRevolutInformationalBannerConfig($bannerConfig)
-    {
-        $this->setData(self::REVOLUT_INFORMATIONAL_BANNER_CONFIG, $bannerConfig);
-        return $this;
-    }
-
-    /**
-     * Get RevolutInformationalBannerConfig
-     *
-     * @return mixed
-     */
-    public function getRevolutInformationalBannerConfig()
-    {
-        return $this->_get(self::REVOLUT_INFORMATIONAL_BANNER_CONFIG);
-    }
 }

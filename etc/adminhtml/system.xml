@@ -19,8 +19,7 @@
                 <include path="Revolut_Payment::system/revolut_card.xml"/>
                 <include path="Revolut_Payment::system/revolut_pay.xml"/>
                 <include path="Revolut_Payment::system/revolut_payment_request.xml"/>
-                <include path="Revolut_Payment::system/promotional_banners_settings.xml"/>
-                <include path="Revolut_Payment::system/additional_settings.xml"/>
+<include path="Revolut_Payment::system/additional_settings.xml"/>
             </group>
         </section>
     </system>

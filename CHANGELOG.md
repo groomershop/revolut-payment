@@ -1,6 +1,5 @@
 # Changelog
 ## 2.1.4
-- Added banner for enrolling in the Revolut Merchant Affiliate Programme.
 
 ## 2.1.3
 - Adjust payment scheme card brands caching
@@ -73,8 +72,6 @@
 
 ## 2.0.15
 
-- Added Revolut promotional banners
-
 ## 2.0.14
 
 - Fixed line item tax and discount amount format
@@ -140,7 +137,6 @@
 - Added Revolut Pay redirection URLs
 - Added Apple Pay - Google Pay
 - Added Revolut Pay Fast Checkout
-- Added Reward Banner
 - Fixed Orders processing with webhooks
 
 ## 1.0.0

@@ -66,12 +66,6 @@
                 <can_deny_payment>1</can_deny_payment>
                 <order_status>processing</order_status>
             </revolut_payment_request>
-            <revolut_payment>
-                <promotional_banners_settings>
-                    <enable_informational_banner>1</enable_informational_banner>
-                    <revolut_pay_title_banner>cashback</revolut_pay_title_banner>
-                </promotional_banners_settings>
-            </revolut_payment>
         </payment>
     </default>
 </config>

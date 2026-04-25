@@ -118,8 +118,7 @@ class ConfigProvider implements ConfigProviderInterface
                     'originUrl' => $this->getStoreDomain(),
                     'locale' => $this->getStoreLocale(),
                     'revolutSdk' => $this->config->getSdkUrl($storeId),
-                    'revolutBannerSdk' => $this->config->getBannerSdkUrl($storeId),
-                    'prButtonStyle' => $this->prConfig->getPaymentRequestButtonStyleConfigs($storeId),
+'prButtonStyle' => $this->prConfig->getPaymentRequestButtonStyleConfigs($storeId),
                     'redirectUrl' => $this->urlBuilder->getUrl(
                         'revolut/process/payment',
                         ['_secure' => $this->request->isSecure()]
@@ -133,13 +132,6 @@ class ConfigProvider implements ConfigProviderInterface
                     'publicKey' => $this->revolutApi->getMerchantPublicKey($storeId),
                     'availableCardBrands' => $availableCardBrands,
                     'isCheckoutPageActivated' => $this->revConfig->isCheckoutPageActivated($storeId),
-                    'informationalBannersData' => [
-                        'isRevolutInformationalBannerEnabled' => $this->revConfig->isRevolutInformationalBannerEnabled(
-                            $storeId
-                        ),
-                        'revolutPayTitleVariant' => $this->revConfig->revolutPayTitleVariant($storeId),
-                        'storeCurrencyCode' =>  $currency
-                    ]
                 ],
             ]
         ];

@@ -83,12 +83,7 @@ define([
         'id',
         'revolut-checkout',
       )
-      $(`script[src="${window.checkoutConfig.payment.revolut.revolutBannerSdk}"]`).attr(
-        'id',
-        'revolut-checkout',
-      )
-
-      this._super()
+this._super()
       let self = this
       var currentQuoteTotals = quote.totals()
       this.checkAmexLogo()

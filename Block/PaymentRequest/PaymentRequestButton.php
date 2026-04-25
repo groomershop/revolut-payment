@@ -206,17 +206,7 @@ class PaymentRequestButton extends Template
         return ConstantValue::REVOLUT_SDK_URLS[$mode];
     }
 
-    /**
-     * Get Revolut Banner Sdk
-     *
-     * @return string
-     */
-    public function getRevolutBannerSdk()
-    {
-        return $this->revolutConfigHelper->getBannerSdkUrl($this->storeManager->getStore()->getId());
-    }
-    
-    /**
+/**
      * Get Merchant Public Key
      *
      * @return mixed

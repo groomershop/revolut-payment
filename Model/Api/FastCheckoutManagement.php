@@ -329,8 +329,7 @@ class FastCheckoutManagement implements FastCheckoutManagementInterface
                 ->setIsRevolutPaymentRequestActiveLocation($this->isRevolutPaymentRequestActiveLocation($location))
                 ->setIsRevolutPayActiveLocation($this->isRevolutPayActiveLocation($location))
                 ->setRevolutPayThemeConfigs($this->getRevolutPayThemeConfigs())
-                ->setRevolutSdk($this->getRevolutSdk())
-                ->setRevolutInformationalBannerConfig($this->getRevolutInformationalBannerConfig());
+                ->setRevolutSdk($this->getRevolutSdk());
     }
 
     /**
@@ -890,24 +889,4 @@ class FastCheckoutManagement implements FastCheckoutManagementInterface
                $this->revolutPayConfigHelper->isActiveLocation($location, $storeId);
     }
 
-    /**
-     * Get RevolutInformationalBannerConfig
-     *
-     * @return mixed
-     */
-    public function getRevolutInformationalBannerConfig()
-    {
-
-        $storeId = $this->storeManager->getStore()->getId();
-
-        return \json_encode([
-            "revolutBannerSdk" => $this->revolutConfigHelper->getBannerSdkUrl($storeId),
-            "isRevolutInformationalBannerEnabled" => $this->revolutPayConfigHelper->isRevolutInformationalBannerEnabled(
-                $storeId
-            ),
-            "storeCurrencyCode" => $this->storeManager->getStore()->getCurrentCurrencyCode(),
-            'locale' => $this->localeResolver->getLocale(),
-            "publicKey" => $this->revolutApi->getMerchantPublicKey($storeId)
-        ]);
-    }
 }

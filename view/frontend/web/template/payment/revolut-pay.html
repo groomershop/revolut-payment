@@ -3,10 +3,7 @@
     <input type="radio" name="payment[method]" class="radio"
       data-bind="event: {change: selectRevolutPaymentMethod}, attr: {'id': getCode()}, value: getCode(), checked: isChecked, change: selectRevolutPaymentMethod, click: selectPaymentMethod, visible: isRadioButtonVisible()" />
     <label data-bind="attr: {'for': getCode()}" class="label revolut-label">
-      <div style="display: flex; align-items: center;">
-        <span style="text-wrap: nowrap;" data-bind="text: getTitle()"></span>
-        <span data-bind="afterRender: renderInformationalIcon" id="revolut-pay-informational-icon"></span>
-      </div>
+      <span data-bind="text: getTitle()"></span>
     </label>
 
     <div id="revolut-label-icons">

@@ -364,18 +364,7 @@ class Config extends \Magento\Payment\Gateway\Config\Config
         return ConstantValue::REVOLUT_SDK_URLS[$this->getModeName($storeId)];
     }
     
-    /**
-     * Get Reward Banner JS SDK url
-     *
-     * @param int $storeId
-     * @return string
-     */
-    public function getBannerSdkUrl($storeId = 0)
-    {
-        return ConstantValue::REVOLUT_BANNER_SDK_URLS[$this->getModeName($storeId)];
-    }
-
-    /**
+/**
      * Get api key
      *
      * @param int $storeId
