@@ -1,6 +1,6 @@
 {
-  "name": "revolut/module-payment",
-  "description": "Revolut payment gateway for Magento2",
+  "name": "groomershop/revolut-payment",
+  "description": "Revolut payment gateway for Magento2 - without banners and product's fast checkout (by GroomerShop)",
   "type": "magento2-module",
   "version": "2.1.4",
   "license": "MIT",
