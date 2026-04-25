@@ -12,15 +12,5 @@
             <label>Revolut Pay information</label>
             <source_model>Revolut\Payment\Model\Source\Banners</source_model>
         </field>
-        <field id="promo_banner_preview"
-            translate="label"
-            type="note"
-            sortOrder="100"
-            showInDefault="1"
-            showInWebsite="1"
-            showInStore="1">
-            <label>Merchant Affiliate Programme</label>
-            <frontend_model>Revolut\Payment\Block\Adminhtml\System\Config\AffiliateBannerBlock</frontend_model>
-        </field>
     </group>
 </include>
