@@ -33,9 +33,7 @@ class Config extends \Magento\Payment\Gateway\Config\Config
     public const LOCATION_SETUP_ID = 'revolut_location_setup_id';
     public const APPLEPAY_DOMAIN_SETUP = 'apple_pay_domain_setup';
     public const CONFIG_CODE = 'payment/revolut_card/';
-    public const ENABLE_REWARD_BANNER = 'payment/revolut_payment/promotional_banners_settings/enable_reward_banner';
-
-    /**
+/**
      * @var Encryptor
      */
     protected $encryptor;
@@ -514,18 +512,4 @@ class Config extends \Magento\Payment\Gateway\Config\Config
         return (bool) $this->getValue(ConstantValue::IS_CARDHOLDER_NAME_FIELD_ACTIVE, $storeId);
     }
 
-    /**
-     * Is gateway banner enabled.
-     *
-     * @param int $storeId
-     * @return bool
-     */
-    public function isGatewayBannerEnabled($storeId)
-    {
-        return (bool) $this->scopeConfig->getValue(
-            self::ENABLE_REWARD_BANNER,
-            ScopeInterface::SCOPE_STORE,
-            $storeId
-        );
-    }
 }

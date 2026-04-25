@@ -4,12 +4,7 @@
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="promotional_banners_settings" translate="label comment" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
         <label>Promotional banners</label>
-        <field id="enable_reward_banner" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label>Enable Reward Banner</label>
-            <comment>This banner can increase conversions by 5% and lets your customers earn a Revolut-funded reward for signing up to Revolut with your link. Without this banner, you can’t join our Merchant Affiliate Programme and earn cash rewards for referrals. Find out more below.</comment>
-            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-        </field>
-        <field id="enable_informational_banner" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+<field id="enable_informational_banner" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Enable Revolut informational Banner</label>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
         </field>

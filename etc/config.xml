@@ -68,7 +68,6 @@
             </revolut_payment_request>
             <revolut_payment>
                 <promotional_banners_settings>
-                    <enable_reward_banner>1</enable_reward_banner>
                     <enable_informational_banner>1</enable_informational_banner>
                     <revolut_pay_title_banner>cashback</revolut_pay_title_banner>
                 </promotional_banners_settings>

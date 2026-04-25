@@ -134,7 +134,6 @@ class ConfigProvider implements ConfigProviderInterface
                     'availableCardBrands' => $availableCardBrands,
                     'isCheckoutPageActivated' => $this->revConfig->isCheckoutPageActivated($storeId),
                     'informationalBannersData' => [
-                        'isGatewayBannerEnabled' => $this->config->isGatewayBannerEnabled($storeId),
                         'isRevolutInformationalBannerEnabled' => $this->revConfig->isRevolutInformationalBannerEnabled(
                             $storeId
                         ),

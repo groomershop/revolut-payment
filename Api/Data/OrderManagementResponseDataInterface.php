@@ -32,9 +32,6 @@ interface OrderManagementResponseDataInterface
     public const KEY_PUBLIC_KEY = 'public_key';
 
     public const KEY_AVAILABLE_CARD_BRANDS = 'available_card_brands';
-
-    public const KEY_IS_REWARD_BANNER_ACTIVE = 'is_reward_banner_active';
-    
     /**
      * Set RedirectUrl
      *
